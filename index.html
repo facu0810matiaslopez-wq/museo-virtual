@@ -31,8 +31,8 @@
     .room-info { padding: 22px; }
     .room-info h3 { font-family: Georgia, serif; font-size: 23px; font-weight: normal; margin-bottom: 12px; }
     .room-info p { color: #b9b0a5; line-height: 1.6; font-size: 14px; margin-bottom: 18px; }
-    .room-info button { color: #e9c98e; background: none; border: none; cursor: pointer; font-size: 15px; }
-    .room-info button:hover { color: #fff; }
+    .room-link { display: inline-block; color: #e9c98e; text-decoration: none; font-size: 15px; }
+    .room-link:hover { color: #fff; }
     .featured { background: #1a1713; }
     .artwork-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
     .artwork img { display: block; width: 100%; height: 290px; object-fit: cover; background: #28221a; }
@@ -81,19 +81,19 @@
       <div class="rooms">
         <article class="room">
           <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=700&q=80" alt="Galería de arte rupestre" loading="lazy">
-          <div class="room-info"><h3>Arte rupestre</h3><p>Viajá a los orígenes del arte y conocé las pinturas realizadas en cuevas prehistóricas.</p><button onclick="showRoom('Arte rupestre')">Explorar sala →</button></div>
+          <div class="room-info"><h3>Arte rupestre</h3><p>Viajá a los orígenes del arte y conocé las pinturas realizadas en cuevas prehistóricas.</p><a class="room-link" href="arte-rupestre.html">Explorar sala →</a></div>
         </article>
         <article class="room">
           <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=700&q=80" alt="Cuadros clásicos en una galería" loading="lazy">
-          <div class="room-info"><h3>Pinturas clásicas</h3><p>Descubrí artistas, estilos y cuadros que marcaron diferentes épocas.</p><button onclick="showRoom('Pinturas clásicas')">Explorar sala →</button></div>
+          <div class="room-info"><h3>Pinturas clásicas</h3><p>Descubrí artistas, estilos y cuadros que marcaron diferentes épocas.</p><a class="room-link" href="pinturas-clasicas.html">Explorar sala →</a></div>
         </article>
         <article class="room">
           <img src="https://images.unsplash.com/photo-1577083288073-40892c0860a4?auto=format&fit=crop&w=700&q=80" alt="Obra de arte moderno" loading="lazy">
-          <div class="room-info"><h3>Arte moderno</h3><p>Conocé nuevas formas de expresión y los cambios en el mundo artístico.</p><button onclick="showRoom('Arte moderno')">Explorar sala →</button></div>
+          <div class="room-info"><h3>Arte moderno</h3><p>Conocé nuevas formas de expresión y los cambios en el mundo artístico.</p><a class="room-link" href="arte-moderno.html">Explorar sala →</a></div>
         </article>
         <article class="room">
           <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=700&q=80" alt="Pintura expuesta en un museo" loading="lazy">
-          <div class="room-info"><h3>Grandes museos</h3><p>Recorré una selección de obras y conocé su historia y significado.</p><button onclick="showRoom('Grandes museos')">Explorar sala →</button></div>
+          <div class="room-info"><h3>Grandes museos</h3><p>Recorré una selección de obras y conocé su historia y significado.</p><a class="room-link" href="grandes-museos.html">Explorar sala →</a></div>
         </article>
       </div>
     </section>
