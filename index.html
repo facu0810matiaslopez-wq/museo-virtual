@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recorré un museo virtual y descubrí obras, culturas e historia del arte.">
+  <title>Museo Virtual | Un viaje por el arte</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: #101010; color: #f5f0e8; font-family: Arial, sans-serif; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 22px 7%; background: #101010; border-bottom: 1px solid #39332c; gap: 20px; flex-wrap: wrap; }
+    .logo { font-family: Georgia, serif; font-size: 26px; color: #e9c98e; }
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a { color: #eee; text-decoration: none; }
+    nav a:hover { color: #e9c98e; }
+    .hero { min-height: 520px; display: flex; align-items: center; padding: 70px 8%; background: linear-gradient(90deg, #100d0bf2, #100d0b65), url("https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1800&q=85") center/cover; }
+    .hero-content { max-width: 650px; }
+    .eyebrow { color: #e9c98e; letter-spacing: 4px; text-transform: uppercase; font-size: 12px; }
+    h1 { font-family: Georgia, serif; font-size: clamp(40px, 6vw, 72px); font-weight: normal; margin: 22px 0; }
+    .hero p { color: #e1d9ce; font-size: 17px; line-height: 1.8; margin-bottom: 28px; }
+    .button { display: inline-block; padding: 15px 25px; border: 1px solid #e9c98e; color: #e9c98e; text-decoration: none; border-radius: 3px; cursor: pointer; background: transparent; font-size: 15px; }
+    .button:hover { background: #e9c98e; color: #17120c; }
+    section { padding: 70px 7%; }
+    .section-title { font-family: Georgia, serif; font-size: 36px; font-weight: normal; margin-bottom: 12px; }
+    .section-description { color: #b9b0a5; line-height: 1.7; margin-bottom: 30px; }
+    .rooms { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
+    .room { background: #1c1a17; border: 1px solid #39332c; transition: transform .3s, border-color .3s; overflow: hidden; }
+    .room:hover { transform: translateY(-6px); border-color: #c6a66d; }
+    .room img { display: block; width: 100%; height: 220px; object-fit: cover; }
+    .room-info { padding: 22px; }
+    .room-info h3 { font-family: Georgia, serif; font-size: 23px; font-weight: normal; margin-bottom: 12px; }
+    .room-info p { color: #b9b0a5; line-height: 1.6; font-size: 14px; margin-bottom: 18px; }
+    .room-info button { color: #e9c98e; background: none; border: none; cursor: pointer; font-size: 15px; }
+    .room-info button:hover { color: #fff; }
+    .featured { background: #1a1713; }
+    .artwork-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+    .artwork img { display: block; width: 100%; height: 290px; object-fit: cover; background: #28221a; }
+    .artwork h3 { font-family: Georgia, serif; font-weight: normal; font-size: 21px; margin: 14px 0 8px; }
+    .artwork p { color: #b9b0a5; font-size: 14px; line-height: 1.6; }
+    .about { max-width: 850px; margin: auto; text-align: center; }
+    footer { text-align: center; padding: 30px 15px; border-top: 1px solid #39332c; color: #a9a095; font-size: 13px; }
+    .modal { display: none; position: fixed; inset: 0; z-index: 10; background: #000d; align-items: center; justify-content: center; padding: 20px; }
+    .modal.open { display: flex; }
+    .modal-content { max-width: 600px; width: 100%; padding: 32px; background: #201c17; border: 1px solid #c6a66d; line-height: 1.8; }
+    .modal-content h2 { font-family: Georgia, serif; font-weight: normal; font-size: 30px; margin-bottom: 15px; color: #e9c98e; }
+    .close { float: right; color: #e9c98e; border: none; background: none; font-size: 28px; cursor: pointer; }
+    @media (max-width: 600px) {
+      header { padding: 20px; }
+      nav { gap: 14px; }
+      .hero { min-height: 470px; padding: 45px 24px; }
+      section { padding: 50px 22px; }
+      .section-title { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">✦ Museo Virtual</div>
+    <nav aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#salas">Recorrer salas</a>
+      <a href="#obras">Obras destacadas</a>
+      <a href="#informacion">Información</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <div class="eyebrow">Historia · Cultura · Arte</div>
+        <h1>Un viaje por la historia del arte</h1>
+        <p>Explorá mundos antiguos, descubrí pinturas rupestres y admirÁ algunas de las obras más fascinantes de la humanidad. Todo desde tu pantalla.</p>
+        <a class="button" href="#salas">Comenzar visita →</a>
+      </div>
+    </section>
+
+    <section id="salas">
+      <h2 class="section-title">Recorré nuestras salas</h2>
+      <p class="section-description">Elegí un destino y descubrí las historias que guarda cada obra.</p>
+      <div class="rooms">
+        <article class="room">
+          <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=700&q=80" alt="Galería de arte rupestre" loading="lazy">
+          <div class="room-info"><h3>Arte rupestre</h3><p>Viajá a los orígenes del arte y conocé las pinturas realizadas en cuevas prehistóricas.</p><button onclick="showRoom('Arte rupestre')">Explorar sala →</button></div>
+        </article>
+        <article class="room">
+          <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=700&q=80" alt="Cuadros clásicos en una galería" loading="lazy">
+          <div class="room-info"><h3>Pinturas clásicas</h3><p>Descubrí artistas, estilos y cuadros que marcaron diferentes épocas.</p><button onclick="showRoom('Pinturas clásicas')">Explorar sala →</button></div>
+        </article>
+        <article class="room">
+          <img src="https://images.unsplash.com/photo-1577083288073-40892c0860a4?auto=format&fit=crop&w=700&q=80" alt="Obra de arte moderno" loading="lazy">
+          <div class="room-info"><h3>Arte moderno</h3><p>Conocé nuevas formas de expresión y los cambios en el mundo artístico.</p><button onclick="showRoom('Arte moderno')">Explorar sala →</button></div>
+        </article>
+        <article class="room">
+          <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=700&q=80" alt="Pintura expuesta en un museo" loading="lazy">
+          <div class="room-info"><h3>Grandes museos</h3><p>Recorré una selección de obras y conocé su historia y significado.</p><button onclick="showRoom('Grandes museos')">Explorar sala →</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="featured" id="obras">
+      <h2 class="section-title">Obras destacadas</h2>
+      <p class="section-description">Cada obra es una ventana a otra época.</p>
+      <div class="artwork-grid">
+        <article class="artwork">
+          <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=700&q=80" alt="Pintura artística" loading="lazy">
+          <h3>El arte a través del tiempo</h3><p>Las pinturas permiten conocer las ideas, emociones y culturas de distintas sociedades.</p>
+        </article>
+        <article class="artwork">
+          <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=700&q=80" alt="Colección de obras de arte" loading="lazy">
+          <h3>El mundo de los museos</h3><p>Los museos conservan obras que ayudan a comprender nuestro pasado y presente.</p>
+        </article>
+        <article class="artwork">
+          <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=700&q=80" alt="Pintura de colores" loading="lazy">
+          <h3>La expresión artística</h3><p>Colores, formas y materiales permiten expresar ideas de maneras diferentes.</p>
+        </article>
+        <article class="artwork">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Tsunami_by_hokusai_19th_century.jpg" alt="La gran ola de Kanagawa, de Katsushika Hokusai" loading="lazy">
+          <h3>La gran ola de Kanagawa</h3><p>Katsushika Hokusai · Arte japonés</p>
+        </article>
+        <article class="artwork">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" alt="La noche estrellada, de Vincent van Gogh" loading="lazy">
+          <h3>La noche estrellada</h3><p>Vincent van Gogh · Postimpresionismo</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="informacion">
+      <div class="about">
+        <h2 class="section-title">El arte no tiene fronteras</h2>
+        <p class="section-description">Este museo virtual es un espacio para explorar la historia, aprender sobre diferentes culturas y acercarse al patrimonio artístico de la humanidad. La visita está abierta a todos, desde cualquier lugar del mundo.</p>
+        <a class="button" href="#inicio">Volver al inicio ↑</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="roomModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target === this) closeRoom()">
+    <div class="modal-content">
+      <button class="close" onclick="closeRoom()" aria-label="Cerrar">×</button>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+      <br>
+      <button class="button" onclick="closeRoom()">Volver al museo</button>
+    </div>
+  </div>
+
+  <footer><p>© 2026 Museo Virtual · Un recorrido por el arte y la historia</p></footer>
+
+  <script>
+    const descriptions = {
+      "Arte rupestre": "Las pinturas rupestres son representaciones realizadas por grupos humanos prehistóricos sobre paredes de cuevas y abrigos rocosos. En lugares como Chauvet, en Francia, se conservan imágenes de animales que nos acercan a la vida de nuestros antepasados.",
+      "Pinturas clásicas": "Las pinturas clásicas reflejan las creencias, las costumbres y las ideas de distintas épocas. Explorá sus técnicas, sus colores y las historias que representan.",
+      "Arte moderno": "El arte moderno experimentó con nuevos estilos, materiales y formas de expresión. Muchos artistas dejaron atrás las reglas tradicionales para explorar otras maneras de representar el mundo.",
+      "Grandes museos": "Los museos reúnen y conservan obras de diferentes culturas y períodos históricos. Son espacios para aprender, investigar y disfrutar del patrimonio artístico."
+    };
+
+    function showRoom(name) {
+      document.getElementById("modalTitle").textContent = name;
+      document.getElementById("modalDescription").textContent = descriptions[name] || "Descubrí la historia de esta sala.";
+      document.getElementById("roomModal").classList.add("open");
+    }
+
+    function closeRoom() {
+      document.getElementById("roomModal").classList.remove("open");
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") closeRoom();
+    });
+  </script>
+</body>
+</html>
